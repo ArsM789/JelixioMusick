@@ -1,0 +1,413 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    transition: all 0.375s;
+    margin: 0;
+    padding: 0;
+    user-select: none;
+}
+
+
+body {
+    --color-text-track: #e4eddb;
+    --color-text-author: #e4eddbc7 ;
+    --color-bac-header: #144d53 ;
+    --color-bac-footer: #144d53 ;
+    --color-icons: #e4eddb;
+    --color-text-site: #aacfd0 ;
+    --color-span-text-site: #e4eddb ;
+    --bac-color-site:#307672 ;
+
+
+    background-color: var(--color-bac-header);
+}
+
+
+/*-------------------- header ------------------*/
+
+.header {
+    width: 100%;
+    height: 60px;
+    background-color: var(--color-bac-header);
+    border-bottom:2px solid var(--bac-color-site);
+}
+.header__container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px 20px;
+
+}
+.header__logo {
+    display: flex;
+    flex-direction: row;
+    color: var(--color-text-site);
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    font-family: 'Poppins';
+}
+
+.header__logo > img {
+    width: 40px;
+    height: 40px;
+}
+
+.header__logo > h3 {
+    font-size: 18px;
+    font-weight: 500;
+    opacity: 0.9;
+    color: var(--color-text-site);
+}
+
+.title {
+    color: var(--color-span-text-site);
+}
+
+.header__user-logo > img {
+    width: 40px;
+    height: 40px;
+    border-radius: 1.25rem;
+    cursor: pointer;
+}
+
+/*-------------------- main ------------------*/
+
+/*-------------------- section MUSICK_LIST ------------------*/
+
+.section__musick-list {
+    display: flex;
+    flex-direction: column;
+    padding-top: 30px;
+    align-items: center;
+    height: 80vh;
+    width: 100%;
+}
+
+/* Добавляем затемнение */
+.section__musick-list::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    z-index: 1;
+}
+
+/* Убеждаемся, что контент поверх затемнения */
+.section__musick-list > * {
+    position: relative;
+    z-index: 2;
+}
+
+.section__container-musick {
+    display: flex;
+    flex-direction: column;
+}
+.section__musick-cover > img {
+    width: 350px;
+    height: 350px;
+    border-radius: 10px;
+    filter: drop-shadow(2px 10px 15px rgba(0, 0, 0, 0.789));
+}
+
+.section__musick-pre {
+    display: flex;
+    flex-direction: column;
+    padding-top: 10px;
+}
+
+
+
+.section__musick-title {
+    padding-top: 15px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.section__musick-title > img {
+    width: 45px;
+    height: 45px;
+    border-radius: 1.25rem;
+    filter: drop-shadow(2px 15px 10px rgba(0, 0, 0, 0.724));
+    opacity: 0.8;
+}
+
+.section__musick-title-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.section__musick-title-text > h3 {
+    font-family: 'Ubuntu';
+    font-size: 20px;
+    color: var(--color-text-track);
+}
+
+.section__musick-title-text > p {
+    font-family: 'Poppins';
+    font-weight: 400;
+    color: var(--color-text-author);
+}
+
+
+.section__musick-player {
+    display: flex;
+    flex-direction: column;
+    padding-top: 40px;
+    width: 350px;
+    height: 100px;
+}
+
+.section__musick-player-progress-bar {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.section__musick-bar {
+    height: 2px;
+    max-width: 350px;
+    background-color: #d1d1d1;
+}
+
+.timer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-family: 'Poppins';
+    color: #eeeeeea6;
+}
+
+
+.section__musick-player-button {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-left: 5px;
+    gap: 40px;
+    padding-top: 40px;
+}
+
+.section__musick-player-button > button {
+    background:none ;
+    border: none;
+    font-size: 70px;
+    color: var(--color-icons);
+    cursor: pointer;
+}
+
+.section__musick-player-reaction {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+}
+
+.section__musick-player-reaction > button {
+    background: none;
+    border: none;
+    font-size: 30px;
+    
+}
+
+.section__button-like {
+    color: #b80d57;
+}
+
+.section__button-dis-like {
+    color: #0e1013;
+}
+
+
+/*-------------------- section ABOUT_ME ------------------*/
+
+.section__about-me {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    height: 80vh;
+    align-items: center;
+    justify-content: center;
+}
+.section__about-container {
+    display: flex;
+    flex-direction: column;
+
+}
+.section__about-info-title {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+    height: auto;
+    
+}
+.section__about-main-logo > img {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    border: 4px solid  var(--bac-color-site);
+    filter: drop-shadow(2px 15px 10px rgba(0, 0, 0, 0.4));
+}
+.section__about-text-title > p {
+    font-family: 'Poppins';
+    padding-top: 5px;
+}
+
+.section__about-text-title > h2 {
+    font-family: 'Ubuntu';
+    color: var(--color-span-text-site);
+}
+
+.author {
+    color: var(--color-text-author);
+}
+.info {
+    color: #e4eddb;
+}
+
+.info > span {
+    font-family: 'Open Sans';
+    color: var(--color-span-text-site);
+}
+
+/*-------------------- footer ------------------*/
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background-color: var(--color-bac-footer);
+    border-top: 2px solid var(--bac-color-site);
+}
+
+.footer__container {
+    display: flex;
+    flex-direction: row;
+    padding: 10px 50px;
+    justify-content: space-between;
+}
+
+.footer__container > button {
+    font-size: 45px;
+    background: none;
+    border: none;
+    color: var(--color-icons);
+    cursor: pointer;
+}
+
+.footer__container > button.active {
+    border-bottom: 1px solid #d0cece;
+}
+
+
+@media (max-width: 530px) {
+    .header__logo > h3 {
+        font-size: 18px;
+    }
+
+    .header__logo > img {
+        width: 35px;
+        height: 35px;
+    }
+/*   SECTION musick_list   */
+
+    .section__musick-list {
+        position: fixed;
+        padding: 0;
+        right: 0;
+        left: 0;
+        top: 10;
+        justify-content: center;
+    }
+
+    .section__musick-title > img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .section__musick-cover > img {
+        width: 300px;
+        height: 300px;
+    }
+
+    .section__musick-player {
+        width: 300px;
+    }
+
+    .section__musick-bar {
+        width: 300px;
+    }
+
+
+    /*   SECTION about_me   */
+
+
+
+
+
+    /*   FOOTER    */
+    .footer {
+        height: 60px;
+    }
+
+    .footer__container > button {
+        font-size: 35px;
+    }   
+
+}
+
+@media (max-width: 400px) {
+    .section__musick-list {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .section__musick-cover  {
+        width: 250px;
+        height:250px;
+    }
+
+    .section__container-musick {
+        padding: 0;
+        margin: 0;
+        width: 250px;
+       
+    }
+
+
+    .section__musick-player-progress-bar {
+        max-width: 250px;
+    }
+
+    .section__musick-player-button {
+        display: flex;
+        justify-content: space-around;
+        width: 250px;
+        padding-top: 25px;
+    }
+
+    .section__musick-player-button > button {
+        font-size: 45px;
+    }
+
+
+    .section__musick-cover > img {
+        width: 250px;
+        height: 250px;
+    }
+
+    .section__musick-title > img {
+        width: 35px;
+        height: 35px;
+    }
+    
+}
